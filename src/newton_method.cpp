@@ -68,11 +68,11 @@ vector<double> newton_method(const vector<double> f1, const vector<double> f2, c
 
 	for (int i = 0; i < iter; i++)
 	{
-		vector<double> F = build_function_vector(f1, f2, x, y);
+		vector<double> F = build_function_vector(f1, f2, solution[0], solution[1]);
 		for (int i = 0; i < 2; i++)
 			F[i] *= (-1);
 
-		vector<vector<double>> J = build_jacobian(f1, f2, x, y);
+		vector<vector<double>> J = build_jacobian(f1, f2, solution[0], solution[1]);
 		if (!possible(J))
 		{
 			cout << endl << "Jacobian is degenerate, stopping." << endl;
