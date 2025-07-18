@@ -29,28 +29,6 @@ void initialize(vector<vector<double>> &A)
 			A[i][j] = 0;
 }
 
-vector<vector<double>> multiply_matrices(const vector<vector<double>> A, const vector<vector<double>> B)
-{
-        vector<vector<double>> result(n, vector<double>(n));
-
-        for (int i = 0; i < n; i++)
-                for (int j = 0; j < n; j++)
-                        for (int k = 0; k < n; k++)
-                                result[i][j] += A[i][k] * B[k][j];
-
-        return result;
-}
-
-bool correct(const vector<vector<double>> A, const vector<vector<double>> L, const vector<vector<double>> U)
-{
-	vector<vector<double>> LU = multiply_matrices(L, U);
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < n; j++)
-			if (A[i][j] != LU[i][j])
-				return false;
-	return true;
-}
-
 void lu_decomposition(const vector<vector<double>> A, vector<vector<double>> &L, vector<vector<double>> &U)
 {
 	initialize(L);
@@ -91,10 +69,6 @@ int main()
 	print_matrix(L);
 	cout << endl << "U =" << endl;
 	print_matrix(U);
-	if (correct(A, L, U))
-		cout << endl << "Decomposition is correct." << endl;
-	else
-		cout << endl << "Decomposition is incorrect." << endl;
 	
 	return 0;
 }
