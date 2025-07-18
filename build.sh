@@ -6,11 +6,10 @@ if [ -d "compiled_output" ]; then
 fi
 mkdir compiled_output
 echo Compiling...
-g++ -o compiled_output/cholesky_decomposition src/cholesky_decomposition.cpp
-g++ -o compiled_output/math_stat_task src/math_stat_task.cpp
-g++ -o compiled_output/numerical_integration src/numerical_integration.cpp
-g++ -o compiled_output/lagrange_polynomial src/lagrange_polynomial.cpp
-g++ -o compiled_output/newton_method src/newton_method.cpp
-g++ -o compiled_output/random_matrix_generator src/random_matrix_generator.cpp
+for file in src/*.cpp; do
+	base_name=$(basename "$file")
+	name_without_extension="${base_name%.*}"
+	g++ -o compiled_output/"$name_without_extension" "$file"
+done
 echo Done.
 
