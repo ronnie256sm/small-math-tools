@@ -9,6 +9,7 @@ echo Compiling...
 for file in src/*.cpp; do
 	base_name=$(basename "$file")
 	name_without_extension="${base_name%.*}"
+	echo "g++ -o compiled_output/$name_without_extension $file"
 	g++ -o compiled_output/"$name_without_extension" "$file"
 done
 echo Done.
