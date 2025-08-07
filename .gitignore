@@ -1,1 +1,4 @@
 compiled_output/
+*.exe
+.vs/
+.vscode/
