@@ -1,16 +1,16 @@
 @echo off
 
-if exist "compiled_output\" (
-    echo Previous compiled_output directory was found, cleaning up
-    rmdir /s /q compiled_output
+if exist "bin\" (
+    echo Previous bin directory was found, cleaning up
+    rmdir /s /q bin
 )
-mkdir compiled_output
+mkdir bin
 echo Compiling...
 
 pushd src
 for %%f in (*.cpp) do (
     echo Compiling %%f...
-    g++ -o ..\compiled_output\%%~nf.exe %%f
+    g++ -o ..\bin\%%~nf.exe %%f
     if errorlevel 1 (
         echo Error compiling %%f
     )

@@ -1,9 +1,9 @@
 @echo off
 
-if exist "compiled_output\" (
+if exist "bin\" (
     echo Cleaning up...
-    rmdir /s /q compiled_output
+    rmdir /s /q bin
     echo Done.
 ) else (
-    echo Could not find the compiled_output directory, quitting.
+    echo Could not find the bin directory, quitting.
 )
