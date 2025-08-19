@@ -10,3 +10,4 @@
 - random\_matrix\_generator - генератор симметричных положительно определенных матриц типа A=LL<sup>T</sup>.
 - lu\_decomposition - LU-разложение матрицы.
 - gilbert\_matrix\_generator - генератор матриц Гильберта.
+- determinant - нахождение определителя квадратной матрицы.
