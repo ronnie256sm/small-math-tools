@@ -10,7 +10,7 @@ echo Compiling...
 pushd src
 for %%f in (*.cpp) do (
     echo Compiling %%f...
-    g++ -o ..\bin\%%~nf.exe %%f
+    g++ -O3 -o ..\bin\%%~nf.exe %%f
     if errorlevel 1 (
         echo Error compiling %%f
     )
